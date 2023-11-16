@@ -11,11 +11,12 @@ const navPublicItems: NavItem[] = [
 
 export function HeaderNavigation() {
   return (
-    <header>
-      <nav>
-        <ul>
+    <header className="z-10 sticky top-0 flex items-center justify-center bg-indigo-500 text-white py-4 text-lg">
+      <nav className="w-full flex max-w-6xl items-center justify-between">
+        <span>Web Sekolah</span>
+        <div className="flex justify-between">
           <NavigationList navItems={navPublicItems} />
-        </ul>
+        </div>
       </nav>
     </header>
   );
@@ -23,10 +24,16 @@ export function HeaderNavigation() {
 
 export function NavigationList({ navItems }: { navItems: NavItem[] }) {
   return (
-    <>
+    <ul className="flex gap-8">
       {navItems.map((navItem) => {
-        return <li key={navItem.text}>{navItem.text}</li>;
+        return (
+          <li
+            key={navItem.text}
+            className="hover:bg-indigo-600 px-4 py-2 rounded-md">
+            {navItem.text}
+          </li>
+        );
       })}
-    </>
+    </ul>
   );
 }

@@ -6,9 +6,11 @@ interface Props {
 
 export function Layout({ children }: Props) {
   return (
-    <div className="flex flex-col justify-center items-center gap-2 min-h-screen">
+    <div className="w-full">
       <HeaderNavigation />
-      <main>{children}</main>
+      <main className="flex flex-col justify-center items-center gap-2 min-h-screen">
+        {children}
+      </main>
     </div>
   );
 }
