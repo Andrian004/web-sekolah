@@ -1,6 +1,6 @@
 import { Button } from "~/components/ui/button";
 
-export default function Homepage() {
+export default function HomePage() {
   return (
     <div className="flex flex-col justify-center items-center gap-2 min-h-screen">
       <h1 className="text-indigo-700 text-4xl font-semibold">Web Sekolah</h1>

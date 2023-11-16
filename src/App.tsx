@@ -5,7 +5,7 @@ import UserRoute from "~/routes/user";
 export default function App() {
   return (
     <Routes>
-      <Route path="/adm/*" element={<AdminRoute />} />
+      <Route path="/admin/*" element={<AdminRoute />} />
       <Route path="/*" element={<UserRoute />} />
     </Routes>
   );
