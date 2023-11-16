@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import Newspage from "./pages/Newspage";
+import AdminRoute from "./routes/AdminRoute";
+import UserRoute from "./routes/UserRoute";
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/news" element={<Newspage />} />
+      <Route path="/adm/*" element={<AdminRoute />} />
+      <Route path="/*" element={<UserRoute />} />
     </Routes>
   );
 }
