@@ -1,7 +1,9 @@
+import { Layout } from "~/components/layout/layout";
+
 export default function Dashboard() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center">
+    <Layout>
       <h1 className="text-6xl">Dashboard</h1>
-    </div>
+    </Layout>
   );
 }
