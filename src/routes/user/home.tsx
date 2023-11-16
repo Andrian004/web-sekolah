@@ -1,7 +1,7 @@
 import { Button } from "~/components/ui/button";
 import { Layout } from "~/components/layout/layout";
 
-export default function App() {
+export default function HomePage() {
   return (
     <Layout>
       <h1 className="text-indigo-700 text-4xl font-semibold">Web Sekolah</h1>
