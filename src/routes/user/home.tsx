@@ -1,10 +1,11 @@
 import { Button } from "~/components/ui/button";
+import { Layout } from "~/components/layout/layout";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col justify-center items-center gap-2 min-h-screen">
+    <Layout>
       <h1 className="text-indigo-700 text-4xl font-semibold">Web Sekolah</h1>
-      <Button className="bg-indigo-700 hover:bg-indigo-800 px-8">Login</Button>
-    </div>
+      <Button className="bg-indigo-500 hover:bg-indigo-800 px-8">Login</Button>
+    </Layout>
   );
 }
