@@ -5,7 +5,7 @@ const AdminRoute = () => {
   return (
     <>
       <Routes>
-        <Route path="/dasboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Outlet />
     </>
