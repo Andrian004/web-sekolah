@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import AdminRoute from "./routes/AdminRoute";
-import UserRoute from "./routes/UserRoute";
+import AdminRoute from "~/routes/admin";
+import UserRoute from "~/routes/user";
 
 export default function App() {
   return (

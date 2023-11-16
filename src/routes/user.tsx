@@ -1,9 +1,9 @@
 import { Routes, Route, Outlet } from "react-router-dom";
 
-import Homepage from "../pages/user/Homepage";
-import Newspage from "../pages/user/Newspage";
+import Homepage from "~/pages/user/home";
+import Newspage from "~/pages/user/news";
 
-const UserRoute = () => {
+export default function UserRoute() {
   return (
     <>
       <Routes>
@@ -13,6 +13,4 @@ const UserRoute = () => {
       <Outlet />
     </>
   );
-};
-
-export default UserRoute;
+}

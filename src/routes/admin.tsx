@@ -1,7 +1,7 @@
 import { Routes, Route, Outlet } from "react-router-dom";
-import Dashboard from "~/pages/admin/Dashboard";
+import Dashboard from "~/pages/admin/dashboard";
 
-const AdminRoute = () => {
+export default function AdminRoute() {
   return (
     <>
       <Routes>
@@ -10,6 +10,4 @@ const AdminRoute = () => {
       <Outlet />
     </>
   );
-};
-
-export default AdminRoute;
+}
