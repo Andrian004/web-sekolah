@@ -1,10 +1,12 @@
-import { Button } from "~/components/ui/button";
+import { Routes, Route } from "react-router-dom";
+import AdminRoute from "~/routes/admin";
+import UserRoute from "~/routes/user";
 
 export default function App() {
   return (
-    <div className="flex flex-col justify-center items-center gap-2 min-h-screen">
-      <h1 className="text-indigo-700 text-4xl font-semibold">Web Sekolah</h1>
-      <Button className="bg-indigo-700 hover:bg-indigo-800 px-8">Login</Button>
-    </div>
+    <Routes>
+      <Route path="/admin/*" element={<AdminRoute />} />
+      <Route path="/*" element={<UserRoute />} />
+    </Routes>
   );
 }
