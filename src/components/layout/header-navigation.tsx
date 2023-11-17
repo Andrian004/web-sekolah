@@ -1,12 +1,41 @@
+import { NavLink } from "react-router-dom";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "~/components/ui/hover-card";
+
+type DropdownItem = {
+  text: string;
+  path: string;
+};
+
 type NavItem = {
   text: string;
+  dropdown: boolean;
+  dropdownItems?: DropdownItem[];
+  path?: string;
 };
 
 const navPublicItems: NavItem[] = [
-  { text: "Beranda" },
-  { text: "Artikel" },
-  { text: "Tentang" },
-  { text: "Kontak" },
+  { text: "Beranda", path: "/", dropdown: false },
+  { text: "Artikel", path: "/news", dropdown: false },
+  {
+    text: "Staff",
+    dropdown: true,
+    dropdownItems: [
+      { text: "Pendidik", path: "/news" },
+      { text: "Non Pendidik", path: "/news" },
+    ],
+  },
+  {
+    text: "Tentang",
+    dropdown: true,
+    dropdownItems: [
+      { text: "Sejarah", path: "/news" },
+      { text: "Contact", path: "/news" },
+    ],
+  },
 ];
 
 export function HeaderNavigation() {
@@ -28,7 +57,31 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
       {navItems.map((navItem) => {
         return (
           <li key={navItem.text} className="px-4 py-2 rounded-md">
-            {navItem.text}
+            {!navItem.dropdown ? (
+              <NavLink to={navItem.path ? navItem.path : ""}>
+                {navItem.text}
+              </NavLink>
+            ) : (
+              <HoverCard openDelay={300} closeDelay={150}>
+                <HoverCardTrigger className="hover:cursor-pointer">
+                  {navItem.text}
+                </HoverCardTrigger>
+                <HoverCardContent className="mt-6">
+                  <ul>
+                    {navItem.dropdownItems?.map((item, index) => {
+                      return (
+                        <li
+                          key={index}
+                          className="mb-2 p-1 rounded hover:bg-primary hover:text-white"
+                        >
+                          <NavLink to={item.path}>{item.text}</NavLink>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </HoverCardContent>
+              </HoverCard>
+            )}
           </li>
         );
       })}
