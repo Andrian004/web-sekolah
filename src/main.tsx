@@ -5,6 +5,9 @@ import "./styles/global.css";
 import NewsPage from "~/routes/user/news";
 import HomePage from "~/routes/user/home";
 import Dashboard from "~/routes/admin/dashboard";
+import PlanPage from "~/routes/user/plan";
+import StaffPage from "~/routes/user/staff";
+import AboutPage from "~/routes/user/about";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +17,18 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <NewsPage />,
+  },
+  {
+    path: "/plan",
+    element: <PlanPage />,
+  },
+  {
+    path: "/staff",
+    element: <StaffPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
   },
   {
     path: "/admin/dashboard",
