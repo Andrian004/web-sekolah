@@ -1,5 +1,5 @@
 import { Layout } from "~/components/layout/layout";
-import Hero from "~/components/hero-section";
+import Hero from "~/components/shared/hero-section";
 
 export default function HomePage() {
   return (
