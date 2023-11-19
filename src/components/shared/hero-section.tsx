@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
-import { Button } from "../ui/button";
+import { Button } from "~/components/ui/button";
 
 export default function Hero() {
-  const [searchValue, setSearchValue] = useState<string>();
+  const [searchValue, setSearchValue] = useState<string>("");
 
   function handleSearch(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
