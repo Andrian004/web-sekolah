@@ -42,7 +42,7 @@ const navPublicItems: NavItem[] = [
 
 export function HeaderNavigation() {
   return (
-    <header className="z-10 sticky top-0 flex items-center justify-center bg-primary text-white py-4 text-lg">
+    <header className="z-10 w-full fixed top-0 flex items-center justify-center bg-primary text-white py-4 text-lg">
       <nav className="w-full flex max-w-6xl items-center justify-between">
         <span>Web Sekolah</span>
         <div className="flex justify-between">
