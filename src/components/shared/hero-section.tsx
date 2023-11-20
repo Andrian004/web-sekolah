@@ -16,8 +16,7 @@ export default function Hero() {
       </h1>
       <form
         onSubmit={handleSearch}
-        className="flex w-full md:w-2/3 rounded-full mt-16 bg-white rounded-full shadow-inner p-1"
-      >
+        className="flex w-full md:w-2/3 rounded-full mt-16 bg-white shadow-inner p-1">
         <input
           className="w-full h-full rounded-l-full focus:border-none focus:outline-none text-xl px-5 py-3"
           type="text"
@@ -26,8 +25,7 @@ export default function Hero() {
         />
         <Button
           type="submit"
-          className="h-full text-xl px-5 rounded-full shadow-md"
-        >
+          className="h-full text-xl px-5 rounded-full shadow-md">
           Cari
         </Button>
       </form>
