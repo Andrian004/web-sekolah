@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { TbBaselineDensityMedium } from "react-icons/tb";
+import { TbBaselineDensityMedium, TbCaretDownFilled } from "react-icons/tb";
 import {
   HoverCard,
   HoverCardContent,
@@ -74,13 +74,10 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
   return (
     <>
       {/* md and above */}
-      <ul className="flex gap-8">
+      <ul className="hidden md:flex gap-8">
         {navItems.map((navItem, index) => {
           return (
-            <li
-              key={index}
-              className="px-4 py-2 rounded-md font-semibold hidden md:inline"
-            >
+            <li key={index} className="px-4 py-2 rounded-md font-semibold">
               {!navItem.dropdown ? (
                 <NavLink
                   to={navItem.path ? navItem.path : ""}
@@ -100,17 +97,15 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                     setListIndex(index);
                   }}
                 >
-                  <HoverCardTrigger className="hover:cursor-pointer flex gap-1">
+                  <HoverCardTrigger className="hover:cursor-pointer flex items-center gap-1">
                     {navItem.text}
-                    <div
+                    <TbCaretDownFilled
                       className={
                         isOpen && index === listIndex
                           ? "rotate-180 ease-linear duration-300"
                           : "ease-linear duration-300"
                       }
-                    >
-                      <i className={`bi bi-caret-down-fill`}></i>
-                    </div>
+                    />
                   </HoverCardTrigger>
                   <HoverCardContent className="mt-6">
                     <div className="flex flex-col">
