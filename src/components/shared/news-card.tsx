@@ -1,5 +1,6 @@
 import { Card } from "~/components/ui/card";
 import { News } from "~/types/news";
+import { formatDateTimeRelative } from "~/utils/datetime";
 
 export function NewsList({ news }: { news: News[] }) {
   if (news.length <= 0) {
@@ -26,7 +27,7 @@ export function NewsList({ news }: { news: News[] }) {
               <h3>{item.judulberita}</h3>
               <p className="text-muted-foreground">{item.deskripsi}</p>
               <p>
-                <time>{item.tanggalBerita}</time>
+                <time>{formatDateTimeRelative(item.tanggalBerita)}</time>
               </p>
             </div>
           </Card>
