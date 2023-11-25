@@ -1,5 +1,5 @@
 export const newsQueryKeys = {
-    all: ['news'],
+    all: [''],
     details: () => [...newsQueryKeys.all, 'detail'],
     detail: (id: number) => [...newsQueryKeys.details(), id],
     pagination: (page: number) => [...newsQueryKeys.all, 'pagination', page],
