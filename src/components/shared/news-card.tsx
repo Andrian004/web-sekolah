@@ -10,12 +10,12 @@ export function NewsList({ news }: { news: News[] }) {
 
   return (
     <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {news?.map((item) => (
+      {news.map((item) => (
         <li key={item.id}>
           <Card className="group h-full shadow-none p-2 border-none">
             <div className="relative w-full overflow-hidden rounded-lg">
               <img
-                className="w-full rounded-lg"
+                className="w-full aspect-video"
                 width={300}
                 height={200}
                 src="https://picsum.photos/300/200"
