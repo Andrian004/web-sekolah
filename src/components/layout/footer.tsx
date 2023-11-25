@@ -1,6 +1,7 @@
+import { getCurrentYear } from "~/utils/datetime";
+
 export function Footer() {
-  const date = new Date();
-  const year = date.getFullYear();
+  const year = getCurrentYear();
 
   return (
     <footer className="w-full bottom-0 flex items-center justify-center bg-primary text-white py-4 text-base h-20">
