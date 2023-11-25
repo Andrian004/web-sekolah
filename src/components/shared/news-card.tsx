@@ -16,9 +16,9 @@ export function NewsList({ news }: { news: News[] }) {
             <div className="relative w-full overflow-hidden rounded-lg">
               <img
                 className="w-full rounded-lg"
-                width={350}
-                height={250}
-                src="https://picsum.photos/350/250"
+                width={300}
+                height={200}
+                src="https://picsum.photos/300/200"
                 alt={item.judulberita}
               />
             </div>
