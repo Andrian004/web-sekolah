@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Card } from "~/components/ui/card";
 import { News } from "~/types/news";
 import { formatDateTime } from "~/utils/datetime";
@@ -9,25 +10,27 @@ export function NewsList({ news }: { news: News[] }) {
 
   return (
     <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {news.map((item) => (
+      {news?.map((item) => (
         <li key={item.id}>
-          <Card className="group h-full rounded-xl p-6">
+          <Card className="group h-full shadow-none p-2 border-none">
             <div className="relative w-full overflow-hidden rounded-lg">
               <img
-                className="aspect-video w-full rounded-lg"
-                src="https://picsum.photos/300/200"
+                className="w-full rounded-lg"
+                width={350}
+                height={250}
+                src="https://picsum.photos/350/250"
                 alt={item.judulberita}
               />
-              <div className="absolute left-0 top-0 flex h-full w-full translate-y-44 cursor-pointer items-center justify-center bg-secondary/50 text-lg font-bold text-secondary-foreground opacity-0 transition duration-100 group-hover:translate-y-0 group-hover:opacity-100">
-                Read More
-              </div>
             </div>
 
             <div className="mt-5 space-y-4">
-              <h3>{item.judulberita}</h3>
+              <h2 className="font-semibold">{item.judulberita}</h2>
               <p className="text-muted-foreground">{item.deskripsi}</p>
-              <p>
+              <p className="text-xs">
                 <time>{formatDateTime(item.tanggalBerita)}</time>
+              </p>
+              <p className="text-base font-semibold hover:text-primary transition duration-100 w-fit">
+                <Link to={"/"}> READ MORE</Link>
               </p>
             </div>
           </Card>
