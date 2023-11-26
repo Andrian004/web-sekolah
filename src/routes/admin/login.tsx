@@ -1,27 +1,28 @@
 import { useState, FormEvent } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "~/components/ui/button";
 import { useAuth } from "~/api/auth/use-auth";
 import { FormData } from "~/types/auth";
 
 export function Login() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const { isError, isPending, isSuccess, mutate, error, data } = useAuth();
+  const { isPending, mutate } = useAuth();
 
   function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData: FormData = { email, password };
-    mutate(formData);
 
-    if (isSuccess) {
-      localStorage.setItem("token", data.data.token);
-      location.replace("/admin/dashboard");
-      // navigate("/admin/dashboard");
-    }
-
-    if (isError) alert(error.message);
+    mutate(formData, {
+      onSuccess: (data) => {
+        localStorage.setItem("token", data.data.token);
+        navigate("/admin/dashboard");
+      },
+      onError: (error) => {
+        alert(error.message);
+      },
+    });
   }
 
   return (
@@ -29,8 +30,7 @@ export function Login() {
       <div className="w-[400px] h-[400px] shadow-lg p-2 border rounded-lg">
         <form
           className="w-full h-full flex flex-col items-center justify-between"
-          onSubmit={handleLogin}
-        >
+          onSubmit={handleLogin}>
           <h1 className="text-center text-3xl font-bold border-b border-green-400 w-full py-2">
             Login
           </h1>
