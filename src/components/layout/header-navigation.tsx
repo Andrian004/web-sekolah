@@ -33,30 +33,30 @@ type NavItem = {
 };
 
 const navPublicItems: NavItem[] = [
-  { text: "Beranda", path: "/", dropdown: false },
-  { text: "Berita", path: "/news", dropdown: false },
-  { text: "Agenda", path: "/plan", dropdown: false },
+  { text: "BERANDA", path: "/", dropdown: false },
+  { text: "BERITA", path: "/news", dropdown: false },
+  { text: "AGENDA", path: "/plan", dropdown: false },
   {
-    text: "Staff",
+    text: "STAFF",
     dropdown: true,
     dropdownItems: [
-      { text: "Pendidik", path: "/staff" },
-      { text: "Non Pendidik", path: "/staff" },
+      { text: "PENDIDIK", path: "/staff" },
+      { text: "NON PENDIDIK", path: "/staff" },
     ],
   },
   {
-    text: "Tentang",
+    text: "TENTANG",
     dropdown: true,
     dropdownItems: [
-      { text: "Sejarah", path: "/about" },
-      { text: "Contact", path: "/about" },
+      { text: "SEJARAH", path: "/about" },
+      { text: "CONTACT", path: "/about" },
     ],
   },
 ];
 
 export function HeaderNavigation() {
   return (
-    <header className="z-10 w-full fixed top-0 flex items-center justify-center bg-primary text-white py-4 text-lg px-2">
+    <header className="z-10 w-full fixed top-0 flex items-center justify-center bg-primary text-white py-4 text-sm px-2">
       <nav className="w-full flex max-w-6xl items-center justify-between">
         <span className="text-2xl font-semibold">Web Sekolah</span>
         <div className="flex justify-between">
@@ -74,7 +74,7 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
   return (
     <>
       {/* md and above */}
-      <ul className="hidden md:flex gap-8">
+      <ul className="hidden md:flex gap-6">
         {navItems.map((navItem, index) => {
           return (
             <li key={index} className="px-4 py-2 rounded-md font-semibold">
@@ -82,10 +82,11 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                 <NavLink
                   to={navItem.path ? navItem.path : ""}
                   className={({ isActive }) =>
-                    isActive ? "text-black" : "text-white"
+                    isActive
+                      ? "bg-green-700 px-4 py-2 rounded-full"
+                      : "text-white"
                   }
-                  end
-                >
+                  end>
                   {navItem.text}
                 </NavLink>
               ) : (
@@ -95,8 +96,7 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                   onOpenChange={(e) => {
                     setIsOpen(e);
                     setListIndex(index);
-                  }}
-                >
+                  }}>
                   <HoverCardTrigger className="hover:cursor-pointer flex items-center gap-1">
                     {navItem.text}
                     <TbCaretDownFilled
@@ -116,11 +116,10 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                             key={index}
                             className={({ isActive }) =>
                               isActive
-                                ? "mb-2 p-1 rounded hover:bg-primary hover:text-white bg-primary"
-                                : "mb-2 p-1 rounded hover:bg-primary hover:text-white"
+                                ? "mb-2 px-4 py-2 rounded-full hover:bg-primary hover:text-white bg-primary"
+                                : "mb-2 px-4 py-2 rounded-full hover:bg-primary hover:text-white"
                             }
-                            end
-                          >
+                            end>
                             {item.text}
                           </NavLink>
                         );
@@ -153,8 +152,7 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                           isActive
                             ? "w-full p-1 font-semibold text-primary rounded"
                             : "w-full p-1 font-semibold"
-                        }
-                      >
+                        }>
                         {navItem.text}
                       </NavLink>
                     ) : (
