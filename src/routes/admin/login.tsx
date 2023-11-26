@@ -1,15 +1,27 @@
 import { useState, FormEvent } from "react";
+// import { useNavigate } from "react-router-dom";
 import { Button } from "~/components/ui/button";
-// import { useQuery } from "@tanstack/react-query";
-// import axios from "axios";
+import { useAuth } from "~/api/auth/use-auth";
+import { FormData } from "~/types/auth";
 
 export function Login() {
+  // const navigate = useNavigate();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const { isError, isPending, isSuccess, mutate, error, data } = useAuth();
 
   function handleLogin(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    alert(`${email} ${password}`);
+    const formData: FormData = { email, password };
+    mutate(formData);
+
+    if (isSuccess) {
+      localStorage.setItem("token", data.data.token);
+      location.replace("/admin/dashboard");
+      // navigate("/admin/dashboard");
+    }
+
+    if (isError) alert(error.message);
   }
 
   return (
@@ -24,7 +36,7 @@ export function Login() {
           </h1>
           <div className="w-full flex flex-col gap-2">
             <label htmlFor="email" className="text-xl font-medium">
-              Email:
+              Email
             </label>
             <input
               id="email"
@@ -32,11 +44,12 @@ export function Login() {
               className="p-2 border rounded"
               placeholder="Masukkan email anda!"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="w-full flex flex-col gap-2">
             <label htmlFor="email" className="text-xl font-medium">
-              Password:
+              Password
             </label>
             <input
               id="password"
@@ -44,9 +57,18 @@ export function Login() {
               className="p-2 border rounded"
               placeholder="Masukkan Password!"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
-          <Button className="w-full">Login</Button>
+          {isPending ? (
+            <Button className="w-full" disabled>
+              Login
+            </Button>
+          ) : (
+            <Button className="w-full" type="submit">
+              Login
+            </Button>
+          )}
         </form>
       </div>
     </div>

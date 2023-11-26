@@ -1,9 +1,7 @@
-import { Layout } from "~/components/layout/layout";
-
 export function Dashboard() {
   return (
-    <Layout>
+    <div className="w-full h-screen flex justify-center items-center">
       <h1 className="text-6xl">Dashboard</h1>
-    </Layout>
+    </div>
   );
 }
