@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { TbBaselineDensityMedium, TbCaretDownFilled } from "react-icons/tb";
 import {
@@ -19,6 +19,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
+import debounce from "~/utils/debounce";
+import { cn } from "~/utils/cn";
 
 type DropdownItem = {
   text: string;
@@ -54,9 +56,45 @@ const navPublicItems: NavItem[] = [
   },
 ];
 
+export function HeaderNavigationHome() {
+  const [isShowNavbarBackground, setIsShowNavbarBackground] =
+    useState<boolean>(false);
+  const SCROLL_OFFSET: number = 100;
+
+  const handleSetScrollHeight = debounce(() => {
+    setIsShowNavbarBackground(window.scrollY > SCROLL_OFFSET);
+  }, 100);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleSetScrollHeight);
+
+    return () => {
+      window.removeEventListener("scroll", handleSetScrollHeight);
+    };
+  }, [handleSetScrollHeight]);
+
+  return (
+    <header
+      className={cn(
+        "z-10 w-full fixed top-0 flex items-center justify-center text-white py-4 text-sm px-2",
+        isShowNavbarBackground && "bg-primary"
+      )}>
+      <nav className="w-full flex max-w-6xl items-center justify-between">
+        <span className="text-2xl font-semibold">Web Sekolah</span>
+        <div className="flex justify-between">
+          <NavigationList navItems={navPublicItems} />
+        </div>
+      </nav>
+    </header>
+  );
+}
+
 export function HeaderNavigation() {
   return (
-    <header className="z-10 w-full fixed top-0 flex items-center justify-center bg-primary text-white py-4 text-sm px-2">
+    <header
+      className={cn(
+        "z-10 w-full fixed top-0 flex items-center bg-primary justify-center text-white py-4 text-sm px-2"
+      )}>
       <nav className="w-full flex max-w-6xl items-center justify-between">
         <span className="text-2xl font-semibold">Web Sekolah</span>
         <div className="flex justify-between">
