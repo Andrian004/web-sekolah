@@ -154,8 +154,8 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                             key={index}
                             className={({ isActive }) =>
                               isActive
-                                ? "mb-2 px-4 py-2 rounded-full hover:bg-primary hover:text-white bg-primary"
-                                : "mb-2 px-4 py-2 rounded-full hover:bg-primary hover:text-white"
+                                ? "mb-2 px-4 py-2 rounded-full hover:text-primary"
+                                : "mb-2 px-4 py-2 rounded-full hover:text-primary"
                             }
                             end>
                             {item.text}
