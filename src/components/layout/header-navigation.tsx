@@ -188,15 +188,15 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                         to={navItem.path ? navItem.path : ""}
                         className={({ isActive }) =>
                           isActive
-                            ? "w-full p-1 font-semibold text-primary rounded"
-                            : "w-full p-1 font-semibold"
+                            ? "w-full p-1 text-primary rounded"
+                            : "w-full p-1"
                         }>
                         {navItem.text}
                       </NavLink>
                     ) : (
                       <Accordion type="single" collapsible>
                         <AccordionItem className="border-b-0" value="item-1">
-                          <AccordionTrigger className="p-1 focus:no-underline">
+                          <AccordionTrigger className="px-1 py-0 focus:no-underline">
                             {navItem.text}
                           </AccordionTrigger>
                           {navItem.dropdownItems?.map((item, index) => {
