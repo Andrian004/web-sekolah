@@ -13,18 +13,18 @@ export function NewsList({ news }: { news: News[] }) {
       {news.map((item) => (
         <li key={item.id}>
           <Card className="group h-full shadow-none p-2 border-none">
-            <div className="relative w-full overflow-hidden rounded-lg">
+            <div className="w-full relative overflow-hidden rounded-t-lg">
               <img
-                className="w-full aspect-video"
-                width={300}
-                height={200}
-                src="https://picsum.photos/300/200"
+                className="w-full hover:scale-125 transition-transform duration-500 object-cover border"
+                width={350}
+                height={250}
+                src="https://picsum.photos/350/250"
                 alt={item.judulberita}
               />
             </div>
 
             <div className="mt-5 space-y-4">
-              <h2 className="font-semibold">{item.judulberita}</h2>
+              <h3 className="font-semibold">{item.judulberita}</h3>
               <p className="text-muted-foreground">{item.deskripsi}</p>
               <p className="text-xs">
                 <time>{formatDateTime(item.tanggalBerita)}</time>
