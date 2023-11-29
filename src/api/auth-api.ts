@@ -5,5 +5,5 @@ export const apiAuth = axios.create({
 });
 
 export const API_METHODS = {
-  GET: "POST",
+  POST: "POST",
 } as const;
