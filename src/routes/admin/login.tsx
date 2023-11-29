@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "~/components/ui/button";
 import { useAuth } from "~/api/auth/use-auth";
 import { FormData } from "~/types/auth";
+import { Input } from "~/components/ui/input";
 
 export function Login() {
   const navigate = useNavigate();
@@ -31,8 +32,7 @@ export function Login() {
         <section className="form w-full md:w-[350px] h-full p-4">
           <form
             className="w-full h-full flex flex-col items-center justify-between"
-            onSubmit={handleLogin}
-          >
+            onSubmit={handleLogin}>
             <h1 className="text-center text-3xl font-bold w-full py-2">
               Login
             </h1>
@@ -40,11 +40,11 @@ export function Login() {
               <label htmlFor="email" className="text-xl font-medium">
                 Email
               </label>
-              <input
+              <Input
                 id="email"
                 type="email"
-                className="p-2 bg-gray-300 border rounded"
-                placeholder="Masukkan email anda!"
+                autoComplete="off"
+                placeholder="example@mail.com"
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
@@ -53,22 +53,22 @@ export function Login() {
               <label htmlFor="email" className="text-xl font-medium">
                 Password
               </label>
-              <input
+              <Input
                 id="password"
                 type="password"
-                className="p-2 bg-gray-300 border rounded"
-                placeholder="Masukkan Password!"
+                autoComplete="off"
+                placeholder="password"
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </div>
             <p>Forgot Your Password?</p>
             {isPending ? (
-              <Button className="px-4" disabled>
+              <Button className="w-full" disabled>
                 LOGIN
               </Button>
             ) : (
-              <Button className="px-4" type="submit">
+              <Button className="w-full" type="submit">
                 LOGIN
               </Button>
             )}
