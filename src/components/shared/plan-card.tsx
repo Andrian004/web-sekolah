@@ -1,19 +1,11 @@
 import { Link } from "react-router-dom";
 import { Card } from "../ui/card";
+import { formatDateOnly } from "~/utils/datetime";
 
 export default function PlanCard() {
+  const date: Date = new Date();
   return (
     <Card className="group shadow-none p-2 border-none mb-11">
-      <div className="w-full h-[400px] relative overflow-hidden rounded-lg">
-        <img
-          className="w-full hover:scale-125 transition-transform duration-500 object-cover border"
-          width={350}
-          height={250}
-          src="https://picsum.photos/350/250"
-          alt="..."
-        />
-      </div>
-
       <div className="mt-5 space-y-4 text-start mb-2">
         <Link
           to={"/"}
@@ -21,6 +13,7 @@ export default function PlanCard() {
         >
           ワンピースも忘れずに見てね
         </Link>
+        <h6>{formatDateOnly(date)}</h6>
         <p className="text-muted-foreground line-clamp-2">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
           sunt ipsam voluptas fuga in modi dignissimos voluptatem, enim corporis
