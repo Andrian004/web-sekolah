@@ -31,13 +31,15 @@ export function Login() {
       <div className="w-full md:w-[700px] h-[400px] flex bg-gray-100 shadow-2xl rounded-3xl">
         <section className="form w-full md:w-[350px] h-full p-4">
           <form
-            className="w-full h-full flex flex-col items-center justify-between"
+            className="w-full h-full flex flex-col items-center justify-center gap-4"
             onSubmit={handleLogin}>
-            <h1 className="text-center text-3xl font-bold w-full py-2">
+            <h2 className="text-center font-bold w-full py-2 text-emerald-800">
               Login
-            </h1>
+            </h2>
             <div className="w-full flex flex-col gap-2">
-              <label htmlFor="email" className="text-xl font-medium">
+              <label
+                htmlFor="email"
+                className="text-xl font-medium text-emerald-800">
                 Email
               </label>
               <Input
@@ -50,7 +52,9 @@ export function Login() {
               />
             </div>
             <div className="w-full flex flex-col gap-2">
-              <label htmlFor="email" className="text-xl font-medium">
+              <label
+                htmlFor="email"
+                className="text-xl font-medium text-emerald-800">
                 Password
               </label>
               <Input
@@ -62,7 +66,6 @@ export function Login() {
                 required
               />
             </div>
-            <p>Forgot Your Password?</p>
             {isPending ? (
               <Button className="w-full" disabled>
                 LOGIN
@@ -72,6 +75,7 @@ export function Login() {
                 LOGIN
               </Button>
             )}
+            <p className="text-sm">Forgot Your Password?</p>
           </form>
         </section>
         <section className="hero-login hidden md:inline w-[350px] h-full">
