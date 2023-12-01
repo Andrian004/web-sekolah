@@ -17,10 +17,11 @@ import {
   TbBrandYoutubeFilled,
   TbSearch,
 } from "react-icons/tb";
+import { cn } from "~/utils/cn";
 
 type Socmed = {
   icon: React.ReactNode;
-  textColor: string;
+  onHover: string;
   link: string;
   tooltip: string;
 };
@@ -28,25 +29,25 @@ type Socmed = {
 const SocmedList: Socmed[] = [
   {
     icon: <TbBrandFacebookFilled />,
-    textColor: "text-blue-600",
+    onHover: "hover:text-blue-600",
     link: "https://github.com/Andrian004",
     tooltip: "Facebook",
   },
   {
     icon: <TbBrandYoutubeFilled />,
-    textColor: "text-red-600 ",
+    onHover: "hover:text-red-600 ",
     link: "https://github.com/Andrian004",
     tooltip: "Youtube",
   },
   {
     icon: <TbBrandInstagram />,
-    textColor: "text-pink-700 ",
+    onHover: "hover:text-pink-700 ",
     link: "https://github.com/Andrian004",
     tooltip: "Instagram",
   },
   {
     icon: <TbBrandX />,
-    textColor: "text-black",
+    onHover: "hover:text-black",
     link: "https://github.com/Andrian004",
     tooltip: "X (aja)",
   },
@@ -98,7 +99,10 @@ export function PlanPage() {
                   <Tooltip>
                     <TooltipTrigger>
                       <li
-                        className={`border-2 border-primary text-emerald-900 p-2 rounded-full hover:${item.textColor} transition duration-300`}
+                        className={cn(
+                          `border-2 border-primary text-emerald-900 p-2 rounded-full transition duration-300`,
+                          item.onHover
+                        )}
                       >
                         <a href={item.link} className="text-3xl">
                           {item.icon}
