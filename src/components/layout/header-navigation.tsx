@@ -78,7 +78,8 @@ export function HeaderNavigationHome() {
       className={cn(
         "z-10 w-full fixed top-0 flex items-center justify-center text-white py-4 text-sm px-2",
         isShowNavbarBackground && "bg-primary"
-      )}>
+      )}
+    >
       <nav className="w-full flex max-w-6xl items-center justify-between">
         <span className="text-2xl font-semibold">Web Sekolah</span>
         <div className="flex justify-between">
@@ -94,7 +95,8 @@ export function HeaderNavigation() {
     <header
       className={cn(
         "z-10 w-full fixed top-0 flex items-center bg-primary justify-center text-white py-4 text-sm px-2"
-      )}>
+      )}
+    >
       <nav className="w-full flex max-w-6xl items-center justify-between">
         <span className="text-2xl font-semibold">Web Sekolah</span>
         <div className="flex justify-between">
@@ -124,7 +126,8 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                       ? "bg-green-700 px-4 py-2 rounded-full"
                       : "text-white"
                   }
-                  end>
+                  end
+                >
                   {navItem.text}
                 </NavLink>
               ) : (
@@ -134,7 +137,8 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                   onOpenChange={(e) => {
                     setIsOpen(e);
                     setListIndex(index);
-                  }}>
+                  }}
+                >
                   <HoverCardTrigger className="hover:cursor-pointer flex items-center gap-1">
                     {navItem.text}
                     <TbCaretDownFilled
@@ -157,7 +161,8 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                                 ? "mb-2 px-4 py-2 rounded-full hover:text-primary"
                                 : "mb-2 px-4 py-2 rounded-full hover:text-primary"
                             }
-                            end>
+                            end
+                          >
                             {item.text}
                           </NavLink>
                         );
@@ -190,7 +195,8 @@ export function NavigationList({ navItems }: { navItems: NavItem[] }) {
                           isActive
                             ? "w-full p-1 text-primary rounded"
                             : "w-full p-1"
-                        }>
+                        }
+                      >
                         {navItem.text}
                       </NavLink>
                     ) : (
