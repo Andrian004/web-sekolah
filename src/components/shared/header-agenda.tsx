@@ -21,7 +21,11 @@ import { Input } from "../ui/input";
 import { cn } from "~/utils/cn";
 import debounce from "~/utils/debounce";
 
-export default function () {
+interface HeaderAgendaProps {
+  title: string;
+}
+
+export default function ({ title }: HeaderAgendaProps) {
   const [isDrop, setIsDrop] = useState<boolean>(false);
   const [isScroll, setIsScroll] = useState<boolean>(false);
   const SCROLL_OFFSET: number = 100;
@@ -56,7 +60,7 @@ export default function () {
             <TbChevronsUp />
           </Button>
         ) : (
-          <h1 className="text-xl">Agenda</h1>
+          <h1 className="text-xl">{title}</h1>
         )}
         <div className="flex">
           <Button
