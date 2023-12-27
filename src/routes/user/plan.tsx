@@ -10,7 +10,7 @@ export function PlanPage() {
     <Layout>
       <div className="mt-20 flex flex-col lg:flex-row w-full container">
         <section className="flex justify-end lg:hidden sticky top-20">
-          <HeaderAgenda />
+          <HeaderAgenda title="Agenda" />
         </section>
         <section className="hidden lg:inline flex-autow-1/3 p-2">
           <SideBarAgenda />
