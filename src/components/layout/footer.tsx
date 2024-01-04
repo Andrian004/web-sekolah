@@ -60,8 +60,15 @@ export function Footer() {
         <AgendaSekolahSiteFooter />
       </div>
       <section className="w-full border-t-[1px] border-green-500 flex flex-col items-center justify-center bg-primarytext-base h-20">
-        <div className="w-full max-w-6xl">
+        <div className="w-full max-w-6xl flex justify-between">
           <span>Web Sekolah. All rights reserved &copy; {year}</span>
+          <div className="flex items-center justify-center gap-4 text-sm">
+            <span>TERM OF USER</span>
+            <Separator orientation="vertical" className="h-3" />
+            <span>LICENSE</span>
+            <Separator orientation="vertical" className="h-3" />
+            <span>SUPPORT</span>
+          </div>
         </div>
       </section>
     </footer>
