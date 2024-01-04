@@ -119,10 +119,11 @@ function InfoSekolahSiteFooter() {
       <h4 className="w-full font-semibold">INFO SEKOLAH</h4>
       <div className="flex gap-2 items-center justify-center">
         <img
-          src="https://picsum.photos/100"
+          src="https://picsum.photos/80"
           alt="info sekolah"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
+          className="rounded"
         />
         <div className="flex flex-col gap-2">
           <h5 className="uppercase ">Penilaian akhir semester</h5>
@@ -139,10 +140,11 @@ function InfoSekolahSiteFooter() {
 
       <div className="flex gap-2 items-center justify-center">
         <img
-          src="https://picsum.photos/100"
+          src="https://picsum.photos/80"
           alt="info sekolah"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
+          className="rounded"
         />
         <div className="flex flex-col gap-2">
           <h5 className="uppercase ">Penilaian akhir semester</h5>
@@ -164,10 +166,11 @@ function AgendaSekolahSiteFooter() {
       <h4 className="w-full font-semibold">INFO SEKOLAH</h4>
       <div className="flex gap-2 items-center justify-center">
         <img
-          src="https://picsum.photos/100"
+          src="https://picsum.photos/80"
           alt="info sekolah"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
+          className="rounded"
         />
         <div className="flex flex-col gap-2">
           <h5 className="uppercase ">Penilaian akhir semester</h5>
@@ -184,10 +187,11 @@ function AgendaSekolahSiteFooter() {
 
       <div className="flex gap-2 items-center justify-center">
         <img
-          src="https://picsum.photos/100"
+          src="https://picsum.photos/80"
           alt="info sekolah"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
+          className="rounded"
         />
         <div className="flex flex-col gap-2">
           <h5 className="uppercase ">Penilaian akhir semester</h5>
