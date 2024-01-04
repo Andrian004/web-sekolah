@@ -73,6 +73,9 @@
   h4 {
     @apply text-base md:text-lg;
   }
+  h5 {
+    @apply text-xs md:text-base;
+  }
   b {
     @apply font-semibold;
   }

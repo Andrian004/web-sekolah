@@ -5,7 +5,7 @@ import {
   TbBrandYoutubeFilled,
 } from "react-icons/tb";
 
-import { getCurrentYear } from "~/utils/datetime";
+import { formatDateOnly, getCurrentYear } from "~/utils/datetime";
 import { Separator } from "~/components/ui/separator";
 import {
   Tooltip,
@@ -56,6 +56,8 @@ export function Footer() {
     <footer className="w-full bottom-0 flex flex-col items-center justify-center bg-primary text-white text-base px-2">
       <div className="w-full max-w-6xl grid grid-cols-3 py-16 items-center">
         <ProfileSiteFooter />
+        <InfoSekolahSiteFooter />
+        <AgendaSekolahSiteFooter />
       </div>
       <section className="w-full border-t-[1px] border-green-500 flex flex-col items-center justify-center bg-primarytext-base h-20">
         <div className="w-full max-w-6xl">
@@ -99,6 +101,96 @@ function ProfileSiteFooter() {
             </TooltipProvider>
           ))}
         </ul>
+      </div>
+    </section>
+  );
+}
+
+function InfoSekolahSiteFooter() {
+  return (
+    <section className="w-80 flex flex-col items-center justify-center gap-4">
+      <h4 className="w-full font-semibold">INFO SEKOLAH</h4>
+      <div className="flex gap-2 items-center justify-center">
+        <img
+          src="https://picsum.photos/100"
+          alt="info sekolah"
+          width={100}
+          height={100}
+        />
+        <div className="flex flex-col gap-2">
+          <h5 className="uppercase ">Penilaian akhir semester</h5>
+          <time className="text-sm">{formatDateOnly(new Date())}</time>
+          <p className="line-clamp-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vitae
+            voluptate commodi eos maxime doloremque dolore reiciendis laudantium
+            accusamus architecto.
+          </p>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="flex gap-2 items-center justify-center">
+        <img
+          src="https://picsum.photos/100"
+          alt="info sekolah"
+          width={100}
+          height={100}
+        />
+        <div className="flex flex-col gap-2">
+          <h5 className="uppercase ">Penilaian akhir semester</h5>
+          <time className="text-sm">{formatDateOnly(new Date())}</time>
+          <p className="line-clamp-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vitae
+            voluptate commodi eos maxime doloremque dolore reiciendis laudantium
+            accusamus architecto.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AgendaSekolahSiteFooter() {
+  return (
+    <section className="w-80 flex flex-col items-center justify-center gap-4">
+      <h4 className="w-full font-semibold">INFO SEKOLAH</h4>
+      <div className="flex gap-2 items-center justify-center">
+        <img
+          src="https://picsum.photos/100"
+          alt="info sekolah"
+          width={100}
+          height={100}
+        />
+        <div className="flex flex-col gap-2">
+          <h5 className="uppercase ">Penilaian akhir semester</h5>
+          <time className="text-sm">{formatDateOnly(new Date())}</time>
+          <p className="line-clamp-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vitae
+            voluptate commodi eos maxime doloremque dolore reiciendis laudantium
+            accusamus architecto.
+          </p>
+        </div>
+      </div>
+
+      <Separator />
+
+      <div className="flex gap-2 items-center justify-center">
+        <img
+          src="https://picsum.photos/100"
+          alt="info sekolah"
+          width={100}
+          height={100}
+        />
+        <div className="flex flex-col gap-2">
+          <h5 className="uppercase ">Penilaian akhir semester</h5>
+          <time className="text-sm">{formatDateOnly(new Date())}</time>
+          <p className="line-clamp-2">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vitae
+            voluptate commodi eos maxime doloremque dolore reiciendis laudantium
+            accusamus architecto.
+          </p>
+        </div>
       </div>
     </section>
   );
