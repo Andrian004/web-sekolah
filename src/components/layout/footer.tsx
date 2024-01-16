@@ -54,13 +54,13 @@ export function Footer() {
 
   return (
     <footer className="w-full bottom-0 flex flex-col items-center justify-center bg-primary text-white text-base px-2">
-      <div className="w-full max-w-6xl grid grid-cols-3 py-16 items-center">
+      <div className="w-full max-w-6xl grid lg:grid-cols-3 gap-10 py-14">
         <ProfileSiteFooter />
         <InfoSekolahSiteFooter />
         <AgendaSekolahSiteFooter />
       </div>
       <section className="w-full border-t-[1px] border-green-500 flex flex-col items-center justify-center bg-primarytext-base h-20">
-        <div className="w-full max-w-6xl flex justify-between">
+        <div className="w-full max-w-6xl text-center lg:flex lg:justify-between items-center">
           <span>Web Sekolah. All rights reserved &copy; {year}</span>
           <div className="flex items-center justify-center gap-4 text-sm">
             <span>TERM OF USER</span>
@@ -77,7 +77,7 @@ export function Footer() {
 
 function ProfileSiteFooter() {
   return (
-    <section className="w-80 flex flex-col items-center justify-center gap-4">
+    <section className="w-full flex flex-col items-center justify-center gap-4">
       <h2 className="w-full font-semibold">SMA Negeri 1 Surakarta</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae vitae
@@ -115,7 +115,7 @@ function ProfileSiteFooter() {
 
 function InfoSekolahSiteFooter() {
   return (
-    <section className="w-80 flex flex-col items-center justify-center gap-4">
+    <section className="w-full flex flex-col items-center justify-center gap-4">
       <h4 className="w-full font-semibold">INFO SEKOLAH</h4>
       <div className="flex gap-2 items-center justify-center">
         <img
@@ -162,7 +162,7 @@ function InfoSekolahSiteFooter() {
 
 function AgendaSekolahSiteFooter() {
   return (
-    <section className="w-80 flex flex-col items-center justify-center gap-4">
+    <section className="w-full flex flex-col items-center justify-center gap-4">
       <h4 className="w-full font-semibold">INFO SEKOLAH</h4>
       <div className="flex gap-2 items-center justify-center">
         <img
